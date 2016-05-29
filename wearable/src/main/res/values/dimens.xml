@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="time_text_size">40dp</dimen>
+    <dimen name="time_text_size_round">47dp</dimen>
+    <dimen name="date_text_size">15dp</dimen>
+    <dimen name="date_text_size_round">16dp</dimen>
+    <dimen name="text_size">25dp</dimen>
+    <dimen name="text_size_round">27dp</dimen>
+
+    <dimen name="time_y">90dp</dimen>
+    <dimen name="date_y">110dp</dimen>
+    <dimen name="date_y_round">120dp</dimen>
+    <dimen name="divider_y">125dp</dimen>
+    <dimen name="divider_y_round">135dp</dimen>
+    <dimen name="weather_y">160dp</dimen>
+    <dimen name="weather_y_round">170dp</dimen>
+</resources>

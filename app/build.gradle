@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+def version = rootProject.ext.lib_version;
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.example.android.sunshine.app"
+        minSdkVersion 10
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY', '\"YOUR_OPEN_WEATHER_API_KEY_HERE\"'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.github.bumptech.glide:glide:${version.glide}"
+    compile "com.android.support:support-annotations:${version.support_lib}"
+    compile "com.android.support:gridlayout-v7:${version.support_lib}"
+    compile "com.android.support:cardview-v7:${version.support_lib}"
+    compile "com.android.support:appcompat-v7:${version.support_lib}"
+    compile "com.android.support:design:${version.support_lib}"
+    compile "com.android.support:recyclerview-v7:${version.support_lib}"
+    compile "com.google.android.gms:play-services-gcm:${version.google_services}"
+    compile "com.google.android.gms:play-services-wearable:${version.google_services}"
+    compile "com.google.android.gms:play-services-location:${version.google_services}"
+    compile "com.google.android.apps.muzei:muzei-api:${version.muzei}"
+}

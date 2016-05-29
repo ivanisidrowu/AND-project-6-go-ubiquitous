@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+def version = rootProject.ext.lib_version;
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.example.android.sunshine.app"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.google.android.support:wearable:${version.wearable}"
+    compile "com.google.android.gms:play-services-wearable:${version.google_services}"
+}
